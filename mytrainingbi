@@ -14,6 +14,64 @@ echo
 echo "=========================================================="
 echo
 
+alias versusbots ""
+net_fakelag 0
+vs_max_team_switches 999
+sb_all_bot_game 1
+sb_allow_leading 1
+sb_allow_shoot_through_survivors 1
+sb_close_checkpoint_door_interval 0
+sb_friendlyfire 1
+sb_max_team_melee_weapons 4 
+
+sb_takecontrol
+z_vomit_debug 1
+director_debug
+upgrade_add laser_sight
+director_stop
+director_start
+
+alias frezee "sb_stop 1;sb_dont_bash 1;sb_dont shoot 1;nb_blind 1"
+alias mgivew "give shotgun_chrome;give fireaxe"
+
+alias trainil "z_special_spawn_interval 10;z_minion_limit 3"
+alias trainhunter "trainil;z_hunter_limit 3"
+alias trainjockey "trainil;z_jockey_limit 3"
+alias traintank "z_tank_rock_debug 1;z_tank_throw_interval 3;z_spawn tank"
+
+alias kickhunter "kick hunter;kick (1)hunter;kick (2)hunter;kick (3)hunter"
+alias kickcharger "kick charger;kick (1)charger;kick (2)charger;kick (3)charger"
+alias kickjockey "kick jockey;kick (1)jockey;kick (2)jockey;kick (3)jockey"
+alias kicksmoker "kick smoker;kick (1)smoker;kick (2)smoker;kick (3)smoker"
+alias kicksi "kickhunter;kickcharger;kickjockey;kicksmoker"
+alias kickss "kick nick;kick rochelle;kick coach;kick ellis;kick bill;kick zoey;kick louis;kick francis"
+
+alias togglegod "mgod0"
+alias mgod0 "god 1;sv_infinite_ammo 1;alias togglegod mgod1"
+alias mgod1 "god 1;sv_infinite_ammo 1;alias togglegod mgod0"
+
+alias swalls "walls0"
+alias walls0 "r_drawclipbrushes 2;alias swalls walls1"
+alias walls1 "r_drawclipbrushes 0;alias swalls walls0"
+
+alias smelees "melees0"
+alias melees0 "z_show_swings 1;melee_show_swing 1;alias smelees melees1"
+alias melees1 "z_show_swings 0;melee_show_swing 0;alias smelees melees0"
+
+alias shitboxes "hitboxes0"
+alias hitboxes0 "sv_showhitboxes 2;alias shitboxes hitboxes1"
+alias hitboxes1 "sv_showhitboxes 0;alias shitboxes hitboxes0""
+
+alias simpacts "impacts0"
+alias impacts0 "sv_showimpacts 2;alias simpacts impacts1"
+alias impacts1 "sv_showimpacts 0;alias simpacts impacts0"
+
+bind ""
+bind "sb_takecontrol" 
+bindtoggle "cl_drawhud"
+
+melee_show_swing
+
 echo "*** unbind all-keys ***"
 unbindall
 echo "*** fnumber zone start ***"
@@ -22,10 +80,10 @@ bind "f1" "Vote Yes"
 bind "f2" "Vote No"
 bind "f3" "askconnect_accept"
 bindtoggle "f4" "sv_cheats"
-bind "f5" "exec mycoopbi"
-bind "f6" "exec mytrainingbi"
-bind "f7" "exec myversussbi"
-bind "f8" "exec myversusibi"
+bind "f5" "exec mycoop"
+bind "f6" "exec mytraining"
+bind "f7" "exec myversuss"
+bind "f8" "exec myversusi"
 bind "f9" "exec mydefaultbi"
 bind "f10" "record 1"
 bind "f11" "stop"
@@ -39,13 +97,13 @@ bind "2" "slot2"
 bind "3" "slot3"
 bind "4" "slot4"
 bind "5" "slot5"
-bind "6" "qpass4"
-bind "7" "qpass5"
-bind "8" reb45
-bind "9" reb43
-bind "0" "slot10"
-bind "-" "say /away"
-bind "=" "say /join"
+bind "6" "swalls"
+bind "7" "shitboxes"
+bind "8" "simpacts"
+bind "9" "smelees"
+bind "0" "togglegod"
+bind "-" "director_start"
+bind "=" "director_stop"
 echo "*** number zone end ***"
 
 echo "*** alphabet zone start ***"
@@ -67,27 +125,25 @@ bind "e" "+use"
 bind "r" "rcdecals"
 bind "t" "+qswing42"
 bind "f" "impulse 100"
-bind "v" "go_away_from_keyboard"
-
-// vocalizer
-bind "z" "+dname;+mouse_menu Orders"
-bind "x" "+dname;+mouse_menu QA"
-bind "c" "+dname;+mouse_menu Enemies"
-bind "y" "+dname;+mouse_menu Misc1"
-bind "u" "+dname;+mouse_menu Misc2"
-bind "i" "+dname;+mouse_menu Misc3"
-bind "o" "+dname;+mouse_menu Misc4"
-bind "p" "+dname;+mouse_menu Misc5"
+bind "z" "noclip"
+bind "x" ""
+bind "c" ""
+bind "v" ""
+bind "b" ""
+bind "n" ""
+bind "m" ""
+bind "g" ""
+bind "h" ""
+bind "j" ""
+bind "k" ""
+bind "l" ""
+bind "y" ""
+bind "u" ""
+bind "i" ""
+bind "o" ""
+bind "p" "" 
 
 //miscellous
-bind "g" "+dname;+voicerecord"
-bind "h" "say /233"
-bind "j" "say /777"
-bind "k" "say /zs"
-bind "l" ""
-bind "b" "say /buy"
-bind "n" "say /vote"
-bind "m" "say /menu"
 bind "[" "messagemode"
 bind "]" "messagemode2"
 bind "\" "+sb"
@@ -98,17 +154,17 @@ bind "/" "chooseteam"
 echo "*** alphabet zone end ***"
 
 echo "*** keypad zone start ***"
-bind "kp_ins" "say melee"
-bind "kp_del" "say lasersight"
-bind "kp_end" "say medikit"
-bind "kp_downarrow" "say defibrillator"
-bind "kp_pgdn" "say pills"
-bind "kp_leftarrow" "say adrenaline"
-bind "kp_5" "say bile jar"
-bind "kp_rightarrow" "say pipebomb"
-bind "kp_home" "say molotov"
-bind "kp_uparrow" "say incendiary ammo"
-bind "kp_pgup" "say explosive ammo"
+bind "kp_del" "kicksi"
+bind "kp_ins" "z_spawn witch"
+bind "kp_end" "z_spawn hunter"
+bind "kp_downarrow" "z_spawn charger"
+bind "kp_pgdn" "z_spawn jockey"
+bind "kp_leftarrow" "z_spawn smoker"
+bind "kp_5" "z_spawn tank"
+bind "kp_rightarrow" "kickhuter"
+bind "kp_home" "kickcharger"
+bind "kp_uparrow" "kickjockey"
+bind "kp_pgup" "kicksmoker"
 bind "kp_plus" ""
 bind "kp_minus" ""
 bind "kp_slash" ""
@@ -120,8 +176,8 @@ bind "home" "disconnect"
 bind "end" "exit"
 bind "pgup" ""
 bind "pgdn" ""
-bind "uparrow" "togglebgm"
-bind "downarrow" "togglevoice"
+bind "uparrow" ""
+bind "downarrow" ""
 bind "rightarrow" "togglecl_viewmodelfovsurvivor"
 bind "leftarrow" "togglefov_desired"
 echo "*** keypad zone end ***"
