@@ -31,8 +31,11 @@ upgrade_add laser_sight
 director_stop
 director_start
 
-alias frezee "sb_stop 1;sb_dont_bash 1;sb_dont shoot 1;nb_blind 1"
-alias mgivew "give shotgun_chrome;give fireaxe"
+alias togglefreeze "sbfreeze"
+alias sbfreeze "sb_stop 1;sb_dont_bash 1;sb_dont_shoot 1;nb_blind 1;alias togglefreeze sbactive"
+alias sbactive "sb_stop 0;sb_dont_bash 0;sb_dont_shoot 0;nb_blind 0;alias togglefreeze sbfreeze"
+
+alias mgivew "give shotgun_chrome;give fireaxe;give molotov;give medkit;give pills"
 
 alias trainil "z_special_spawn_interval 10;z_minion_limit 3"
 alias trainhunter "trainil;z_hunter_limit 3"
