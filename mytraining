@@ -35,7 +35,9 @@ alias togglefreeze "sbfreeze"
 alias sbfreeze "sb_stop 1;sb_dont_bash 1;sb_dont_shoot 1;nb_blind 1;alias togglefreeze sbactive"
 alias sbactive "sb_stop 0;sb_dont_bash 0;sb_dont_shoot 0;nb_blind 0;alias togglefreeze sbfreeze"
 
-alias mgivew "give shotgun_chrome;give fireaxe;give molotov;give medkit;give pills"
+alias mgivew "mgivew0"
+alias mgivew0 "give shotgun_chrome;give fireaxe;give molotov;give first_aid_kit;give pain_pills;alias mgivew1"
+alias mgivew1 "give sniper_awp;give fireaxe;give molotov;give first_aid_kit;give pain_pills;alias mgivew0"
 
 alias trainil "z_special_spawn_interval 10;z_minion_limit 3"
 alias trainhunter "trainil;z_hunter_limit 3"
@@ -51,7 +53,7 @@ alias kickss "kick nick;kick rochelle;kick coach;kick ellis;kick bill;kick zoey;
 
 alias togglegod "mgod0"
 alias mgod0 "god 1;sv_infinite_ammo 1;alias togglegod mgod1"
-alias mgod1 "god 1;sv_infinite_ammo 1;alias togglegod mgod0"
+alias mgod1 "god 0;sv_infinite_ammo 0;alias togglegod mgod0"
 
 alias swalls "walls0"
 alias walls0 "r_drawclipbrushes 2;alias swalls walls1"
@@ -176,7 +178,7 @@ bind "kp_enter" ""
 bind "ins" "toggleconsole"
 bind "del" "toggleconsole;openserverbrowser"
 bind "home" "disconnect"
-bind "end" "exit"
+bind "end" "exit;exec mycoop"
 bind "pgup" ""
 bind "pgdn" ""
 bind "uparrow" ""
