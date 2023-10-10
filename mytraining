@@ -16,17 +16,19 @@ exec mycore
 echo "*** mytraining bindings ***"
 bind "6" "swalls"
 bind "7" "shitboxes"
-bind "8" "simpacts"
-bind "9" "smelees"
+bind "8" "smelees"
+bind "9" ""
 bind "0" "noclip"
 bind "-" "director_start"
 bind "=" "director_stop"
 
+bind "v" "qswingswap"
 bind "z" "togglefreeze"
 bindtoggle "x" "sb_stop"
 bindtoggle "c" "sb_crouch"
 bindtoggle "b" "sb_dont_bash"
 bindtoggle "n" "sb_dont_shoot"
+bind "m" "eagleeye"
 bindtoggle "m" "sb_takecontrol"
 
 bind "g" "mgivew"
@@ -57,6 +59,11 @@ bind "kp_multiply" "kickcharger"
 bind "kp_minus" "kickjockey"
 bind "kp_plus" "kicksmoker"
 bindtoggle "kp_enter" "sv_cheats"
+
+bind "mouse3" "toggleqswing"
+bind "mwheelup" "qswing12"
+bind "mwheeldown" "qswing42"
+
 echo
 key_listboundkeys
 echo 
