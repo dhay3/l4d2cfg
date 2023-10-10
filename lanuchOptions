@@ -1,1 +1,1 @@
--lv -novid -nohltv -nosteamcontroller -console -lanuage english +r_rootlood 0 +mat_picmip 0 +mat_reducefillrate 1 +r_waterforceexpensive 0 +r_waterforceeflectentities 0 +r_shadowrendertotexture 0 +mat_colorcorrection 0 +mat_forceaniso 16 +mat_hdr_level 0
+-lv -novid -console -high -nohlt -lanuage english +r_rootlood 0 +mat_picmip 0 +mat_reducefillrate 1 +r_waterforceexpensive 0 +r_waterforceeflectentities 0 +r_shadowrendertotexture 0 +mat_colorcorrection 0 +mat_forceaniso 16 +mat_hdr_level 0
