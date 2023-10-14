@@ -28,7 +28,7 @@ bindtoggle "x" "sb_stop"
 bindtoggle "c" "sb_crouch"
 bindtoggle "b" "sb_dont_bash"
 bindtoggle "n" "sb_dont_shoot"
-bind "m" "eagleeye"
+bind "m" "eagleyenormal"
 bindtoggle "m" "sb_takecontrol"
 
 bind "g" "mgivew"
@@ -62,7 +62,7 @@ bindtoggle "kp_enter" "sv_cheats"
 
 bind "mouse3" "toggleqswing"
 bind "mwheelup" "qswing12"
-bind "mwheeldown" "qswing42"
+bind "mwheeldown" "qswing12shove"
 
 echo
 key_listboundkeys
