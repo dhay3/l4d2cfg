@@ -13,6 +13,9 @@ echo
 echo "*** mycore bindings mounted ***"
 exec myscripts
 exec mycore
+vomited0
+itemg0
+itemgf0
 
 echo "*** mytraining bindings ***"
 bind "6" "swalls"
